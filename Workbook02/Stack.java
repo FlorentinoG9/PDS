@@ -1,11 +1,11 @@
 package Workbook02;
 
 public class Stack {
-  
+
   // decalre an array for the stack and a counter to follow in push and pops
   private int[] stackArr = new int[10];
   int tail = 0;
-  
+
   // initialize the stack with zeros and the tail to zero
   public void setStack() {
     for (int i = 0; i < this.stackArr.length; i++) {
@@ -17,7 +17,7 @@ public class Stack {
   // get the Stack to Print on the bash
   public void getStack() {
     System.out.print("Stack: |");
-    for (int i = 0; i < stackArr.length; i++) {
+    for (int i = 0; i < tail; i++) {
       System.out.printf(" %2d |", this.stackArr[i]);
     }
     System.out.println("\n");
@@ -41,16 +41,16 @@ public class Stack {
       // then add 1 to tail (counter)
       tail++;
     } else {
-      // if the array is Full display message 
+      // if the array is Full display message
       System.out.println("Sorry the stack is Full\n");
     }
     // call function to print the stack
     getStack();
   }
 
-  //  pull the las number in the stack that is in 
+  // pull the las number in the stack that is in
   public int pop() {
-    // check if the stack is not empty 
+    // check if the stack is not empty
     if (!isEmpty()) {
       // decrease the tail counter in order to pull the last number
       tail--;
@@ -67,7 +67,9 @@ public class Stack {
       System.out.println("Sorry can\'t do that the stack is empty\n");
     }
     // print array
-    getStack();
+    if (!isEmpty()) {
+      getStack();
+    }
 
     // return zero if stack is empty
     return 0;
