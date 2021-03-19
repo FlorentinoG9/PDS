@@ -72,10 +72,10 @@ public class CircularQueue {
       // return the number from temp variable
       return temp;
     } else {
-      // if the queue is empry display message
+      // if the queue is empty display message
       System.out.println("Circualr Queue is Empty! ");
     }
-
+    
     // return 0 if the queue is empty
     return 0;
   }
