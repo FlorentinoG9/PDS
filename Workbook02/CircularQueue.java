@@ -52,6 +52,8 @@ public class CircularQueue {
     }
   }
 
+  
+
   // get the number from queue where head is
   public int deQueue() {
     // check if the arrays is not empty

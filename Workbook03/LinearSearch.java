@@ -1,48 +1,74 @@
 package Workbook03;
 
+import java.util.Random;
+import java.util.Scanner;
+
 public class LinearSearch {
-  private int[] array = new int[20];
+  private int[] array;
 
   // Constructors
-  LinearSearch(int[] array) {
-    
+  LinearSearch(int size) {
+    setArray(size);
   }
 
   // Setters
-  public void setArray(int[] array) {
-    this.array = array;
-  }
+  public void setArray(int size) {
+    this.array = new int[size];
 
+    for (int i = 0; i < this.array.length; i++) {
+      this.array[i] = new Random().nextInt(20) + 1;
+    }
+  }
 
   // Getters
-  public int[] getArray() {
-    return array;
-  }
 
   // Methods
   public String toString() {
 
-    return "";
+    StringBuilder strArray = new StringBuilder();
+
+    for (int i = 0; i < array.length; i++) {
+      strArray.append(" | " + array[i]);
+    }
+
+    // System.out.printf("%s", strArray.toString());
+
+    return strArray.toString();
   }
 
   public int search(int value) {
-
     for (int i = 0; i < array.length; i++) {
       if (value == array[i]) {
         if (i > 0) {
-          int temp = array[i-1];
-          array[i-1] = array[i];
+          int temp = array[i - 1];
+          array[i - 1] = array[i];
           array[i] = temp;
         }
         return i;
       }
     }
-
     return -1;
   }
 
   public static void main(String[] args) {
-    
+    Scanner input = new Scanner(System.in);
+
+    System.out.print("Enter size of the array: ");
+    LinearSearch obj = new LinearSearch(input.nextInt());
+
+    System.out.printf("%s |", obj.toString());
+
+    int x = 0;
+    while (x < 5) {
+      System.out.print("\n\nSearch for a Value: ");
+      int search = obj.search(input.nextInt());
+      System.out.printf("%s", search == -1 ? "Value not found" : "The index value is: " + search + " -> " + (search - 1));
+  
+      System.out.printf("\n\n%s |", obj.toString());
+      x++;
+    }
+
+    input.close();
   }
 
 }
