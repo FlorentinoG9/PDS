@@ -39,11 +39,11 @@ public class LinearSearch {
   public int search(int value) {
     for (int i = 0; i < array.length; i++) {
       if (value == array[i]) {
-        if (i > 0) {
-          int temp = array[i - 1];
-          array[i - 1] = array[i];
-          array[i] = temp;
-        }
+        // if (i > 0) {
+        //   int temp = array[i - 1];
+        //   array[i - 1] = array[i];
+        //   array[i] = temp;
+        // }
         return i;
       }
     }
@@ -62,8 +62,9 @@ public class LinearSearch {
     while (x < 5) {
       System.out.print("\n\nSearch for a Value: ");
       int search = obj.search(input.nextInt());
-      System.out.printf("%s", search == -1 ? "Value not found" : "The index value is: " + search + " -> " + (search - 1));
-  
+      System.out.printf("%s",
+          search == -1 ? "Value not found" : "The index value was: " + search + " now is -> " + (search - 1) );
+
       System.out.printf("\n\n%s |", obj.toString());
       x++;
     }
