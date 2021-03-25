@@ -36,6 +36,7 @@ public class SelfOrganisingSearch {
   }
 
   public int search(int value) {
+
     for (int i = 0; i < array.length; i++) {
       if (value == array[i]) {
         if (i > 0) {
