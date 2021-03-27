@@ -37,11 +37,6 @@ public class LinearSearch {
   public int search(int value) {
     for (int i = 0; i < array.length; i++) {
       if (value == array[i]) {
-        int temp = array[i];
-        for (int j = i; j > 0; j--) {
-          array[j] = array[j - 1];
-        }
-        array[0] = temp;
         return i;
       }
     }

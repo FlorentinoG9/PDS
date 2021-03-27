@@ -39,11 +39,11 @@ public class SelfOrganisingSearch {
 
     for (int i = 0; i < array.length; i++) {
       if (value == array[i]) {
-        if (i > 0) {
-          int temp = array[i - 1];
-          array[i - 1] = array[i];
-          array[i] = temp;
+        int temp = array[i];
+        for (int j = i; j > 0; j--) {
+          array[j] = array[j - 1];
         }
+        array[0] = temp;
         return i;
       }
     }
