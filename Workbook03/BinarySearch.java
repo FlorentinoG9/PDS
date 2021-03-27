@@ -24,7 +24,7 @@ public class BinarySearch {
     // create a StringBuilder
     StringBuilder strArray = new StringBuilder();
 
-    // append each element of the array into the StringBuilder object
+    // append each element of the array into the StringBuilder object 1 by 1
     for (int i = 0; i < array.length; i++) {
       strArray.append(" | " + array[i]);
     }
