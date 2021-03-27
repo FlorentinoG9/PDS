@@ -22,19 +22,26 @@ public class LinearSearch {
 
   // Methods
   public String toString() {
-
+    // create a StringBuilder
     StringBuilder strArray = new StringBuilder();
 
+    // append each element of the array into the StringBuilder object
     for (int i = 0; i < array.length; i++) {
       strArray.append(" | " + array[i]);
     }
 
+    // return the StringBuilder Object as a string
     return strArray.toString();
   }
 
   public int search(int value) {
     for (int i = 0; i < array.length; i++) {
       if (value == array[i]) {
+        int temp = array[i];
+        for (int j = i; j > 0; j--) {
+          array[j] = array[j - 1];
+        }
+        array[0] = temp;
         return i;
       }
     }

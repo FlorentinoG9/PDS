@@ -97,9 +97,7 @@ public class ArrayStructuresSkeleton {
 				}
 			}
 			if (i != lowest) {
-				int temp = theArray[i];
-				theArray[i] = theArray[lowest];
-				theArray[lowest] = temp;
+				swapValues(i, lowest);
 			}
 		}
 	}
@@ -113,9 +111,13 @@ public class ArrayStructuresSkeleton {
 	public void insertionSort() {
 		for (int i = 1; i < theArray.length; i++) {
 			int current = theArray[i];
-			for (int j = i-1; j >= 0 && theArray[j] > current; j--) {
-				theArray[j+1] = theArray[j];
+			int j = i - 1;
+
+			while (j >= 0 && theArray[j] > current) {
+				theArray[j + 1] = theArray[j];
+				j = j - 1;
 			}
+			theArray[j + 1] = current;
 		}
 	}
 
@@ -129,9 +131,7 @@ public class ArrayStructuresSkeleton {
 			boolean noSwaps = true;
 			for (int j = 0; j < i; j++) {
 				if (theArray[j] > theArray[j + 1]) {
-					var temp = theArray[j];
-					theArray[j] = theArray[j + 1];
-					theArray[j + 1] = temp;
+					swapValues(j, j + 1);
 					noSwaps = false;
 				}
 			}
@@ -142,9 +142,11 @@ public class ArrayStructuresSkeleton {
 
 	// -------------- Swap Values-----------------
 
-	// public void swapValues() {
-
-	// }
+	public void swapValues(int j, int i) {
+		var temp = this.theArray[j];
+		this.theArray[j] = this.theArray[i];
+		this.theArray[i] = temp;
+	}
 
 	// ---------------------TESTING---------------------
 
@@ -152,18 +154,21 @@ public class ArrayStructuresSkeleton {
 
 		ArrayStructuresSkeleton newArray = new ArrayStructuresSkeleton();
 
+		System.out.println("-----SelectionSort-----");
 		newArray.generateRandomArray();
 		newArray.printHorzArray(-1, -1);
-
-
 		newArray.selectionSort();
 		newArray.printHorzArray(-1, -1);
 
-		
+		System.out.println("-----InsertionSort-----");
+		newArray.generateRandomArray();
+		newArray.printHorzArray(-1, -1);
 		newArray.insertionSort();
 		newArray.printHorzArray(-1, -1);
 
-
+		System.out.println("-----BubbleSort-----");
+		newArray.generateRandomArray();
+		newArray.printHorzArray(-1, -1);
 		newArray.bubbleSort();
 		newArray.printHorzArray(-1, -1);
 
