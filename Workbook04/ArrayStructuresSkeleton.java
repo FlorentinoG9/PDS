@@ -89,13 +89,20 @@ public class ArrayStructuresSkeleton {
 	// through the entire array each time
 
 	public void selectionSort() {
+
 		for (int i = 0; i < theArray.length; i++) {
-			int lowest = i;
+			int lowest = i; // assign the lowest potition
 			for (int j = i + 1; j < theArray.length; j++) {
+				// if the array of potition j is lower than potition array with the lowest
+				// variable
 				if (theArray[j] < theArray[lowest]) {
-					lowest = j;
+					lowest = j; // first we assign the lowest variable to the current value of j
 				}
 			}
+			// if the current value of i is not equal to the lowest variable
+			// it means that we change the value of j therefore we change potitions
+			// and call the method to swap the vlaues form the current potition of i and the
+			// potition of j if we switch the potition
 			if (i != lowest) {
 				swapValues(i, lowest);
 			}
@@ -108,15 +115,23 @@ public class ArrayStructuresSkeleton {
 	// had a group sorted at any given time, groups are
 	// only partially sorted here.
 
+	// the insertion sort is a little but different than the others
+	// since it will take out the current value and see if we insert it into another
+	// place in the array
+	//
 	public void insertionSort() {
 		for (int i = 1; i < theArray.length; i++) {
-			int current = theArray[i];
-			int j = i - 1;
+			int current = theArray[i]; // take the current numbe
+			int j = i - 1; // declare the variable j for the while loop
 
+			// compare the current position above with the lower potitions in the array
 			while (j >= 0 && theArray[j] > current) {
+				// if the current number is lower than the next potition
+				// switch places
 				theArray[j + 1] = theArray[j];
 				j = j - 1;
 			}
+			// and get the next potition in the array will be assign to the current number
 			theArray[j + 1] = current;
 		}
 	}
@@ -127,14 +142,20 @@ public class ArrayStructuresSkeleton {
 	// smallest to largest
 
 	public void bubbleSort() {
+
 		for (int i = theArray.length - 1; i > 0; i--) {
-			boolean noSwaps = true;
+			boolean noSwaps = true; // assign a boolean variable to check if there was a swap
 			for (int j = 0; j < i; j++) {
+				// here we compare the values of the array
+				// if it goes thorugh call the method to swap the values
+				// and assign the value of noswaps to false so we can keep looping throught the
+				// array
 				if (theArray[j] > theArray[j + 1]) {
 					swapValues(j, j + 1);
 					noSwaps = false;
 				}
 			}
+			// if not swaps happend the loop will break and end looping through
 			if (noSwaps)
 				break;
 		}
@@ -143,9 +164,10 @@ public class ArrayStructuresSkeleton {
 	// -------------- Swap Values-----------------
 
 	public void swapValues(int j, int i) {
-		var temp = this.theArray[j];
-		this.theArray[j] = this.theArray[i];
-		this.theArray[i] = temp;
+
+		var temp = this.theArray[j];// store the value before changing the potition
+		this.theArray[j] = this.theArray[i];// assignt the value to the right potition
+		this.theArray[i] = temp; // assign the used potition to the temp variable
 	}
 
 	// ---------------------TESTING---------------------
