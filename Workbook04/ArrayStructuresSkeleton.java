@@ -165,7 +165,7 @@ public class ArrayStructuresSkeleton {
 
 	public void swapValues(int j, int i) {
 
-		var temp = this.theArray[j];// store the value before changing the potition
+		int temp = this.theArray[j];// store the value before changing the potition
 		this.theArray[j] = this.theArray[i];// assignt the value to the right potition
 		this.theArray[i] = temp; // assign the used potition to the temp variable
 	}
