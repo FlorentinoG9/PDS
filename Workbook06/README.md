@@ -24,6 +24,8 @@ Before you begin.
 
 Tasks
 
+1. Perform a postorder, preorder & inorder traversal of the binary tree.
+
 ```mermaid
 graph TB
     A --> B
@@ -41,9 +43,10 @@ graph TB
     H --> M
     H --> I
     I --> x(fa:fa-spinner);
-    I --> J   
+    I --> J
 ```
-1. Perform a postorder, preorder & inorder traversal of the binary tree above.
+
+2. For part e and f there are two child nodes.
 
 ```mermaid
 graph TB
@@ -62,9 +65,6 @@ C(18) --> L(20)
 
 ```
 
-
-
-1. For part e and f there are two child nodes.
      - a) Fix the tree above to ensure it is an actual Binary Search Tree and use this new tree to answers the questions below
      - b) Perform a postorder, preorder & inorder traversal of the above binary search tree.
      - c) Insert the value 12 into the above BST (please redraw the entire tree)
@@ -77,13 +77,11 @@ C(18) --> L(20)
 
 > For parts c) to i) ensure that you used the fixed binary search tree as the starting point for each question.
 >
->    Use the following algorithm:
+> Use the following algorithm:
 >
->   - Use the Rightmost node of the Leftside of the BST (Value to be deleted is on the left or the root).
->   - Use the Leftmost node of the Rightside of the BST (Value to be deleted is on the right or the root when the left side of the tree is empty).
->   - For part i Read the Extra Reading slides to find out the Successor value of a node.
-
-
+> - Use the Rightmost node of the Leftside of the BST (Value to be deleted is on the left or the root).
+> - Use the Leftmost node of the Rightside of the BST (Value to be deleted is on the right or the root when the left side of the tree is empty).
+> - For part i Read the Extra Reading slides to find out the Successor value of a node.
 
 3. Draw the binary search tree that is created from inserting data in the following order. Start with the root node as 1 and then insert the values by asking the question “Is it greater or less than the current node?”.
    1,12,9,18,17,19,4,5,3
