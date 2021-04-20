@@ -52,8 +52,6 @@ public class CircularQueue {
     }
   }
 
-  
-
   // get the number from queue where head is
   public int deQueue() {
     // check if the arrays is not empty
@@ -77,7 +75,7 @@ public class CircularQueue {
       // if the queue is empty display message
       System.out.println("Circualr Queue is Empty! ");
     }
-    
+
     // return 0 if the queue is empty
     return 0;
   }
