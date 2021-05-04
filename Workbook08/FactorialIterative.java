@@ -1,28 +1,37 @@
 package Workbook08;
 
-import java.util.Scanner;
-
 public class FactorialIterative {
-  public static void main(String[] args) {
-    Scanner input = new Scanner(System.in);
 
-    System.out.print("Enter a non-negative number: ");
-    int n = input.nextInt();
+  // Property
+  private int number;
 
-    System.out.printf("The factorial of %d is %d", n, factorial(n));
-
-    input.close();
+  // Constructor
+  FactorialIterative(int number) {
+    setNumber(number);
   }
 
-  public static long factorial(int n) {
+  // Setter
+  public void setNumber(int number) {
+    this.number = number;
+  }
+
+  // Getter
+  public int getNumber() {
+    return number;
+  }
+
+  // Method
+  public long factorial() {
     long fact = 1;
 
-    for (int i = n; i > 1; i--) {
+    // the loop will go through for every number and go backwards until is 1 
+    // because if we go all the way to 0 it will miltiply by 0 and the result would be 0
+    for (int i = getNumber(); i > 1; i--) {
       fact *= i;
     }
 
+    // just return the fact variable
     return fact;
-
   }
 
 }

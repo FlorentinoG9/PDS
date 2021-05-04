@@ -1,35 +1,43 @@
 package Workbook08;
 
-import java.util.Scanner;
-
 public class FibonacciIterative {
-  public static void main(String[] args) {
-    Scanner input = new Scanner(System.in);
+  // property
+  private int num;
 
-    System.out.print("Enter a non-negative number: ");
-    int n = input.nextInt();
-
-    System.out.printf("The index %d of fibonacci is: %d", n, fibonacci(n));
-
-    input.close();
+  // constructor
+  FibonacciIterative(int num) {
+    setNum(num);
   }
 
-  public static long fibonacci(int n) {
+  // Setter
+  public void setNum(int num) {
+    this.num = num;
+  }
+
+  // Methods
+  public long fibonacci() {
+    // Decalre the variables and initialize them
     long x1, x2, x3;
     x1 = 0;
     x2 = 0;
     x3 = 1;
 
-    System.out.print("0  1 ");
-    for (int i = 1; i < n; i++) {
+    // System.out.print("0 1 ");
+    // num is the number of iterations in this loop and will give us the index
+    // number of the value that we want in the fibonacci series.
+    for (int i = 1; i < this.num; i++) {
+      // x1 is going to add the number before plus the number before this one 
       x1 = x2 + x3;
+      //  then we assign the current value fo the x3 number and move it to the x2 number 
       x2 = x3;
+      //  and then the last x3 is going to be the same as x1 in the next iteration so the sequence is x2 + x3 = x1 and so on.
       x3 = x1;
-      System.out.printf(" %d ", x1);
+      // System.out.printf(" %d ", x1);
 
     }
-    System.out.println();
+    // System.out.println();
 
+    // at the end of the loop we return just x1 which is the number that we are looking for
     return x1;
   }
 }

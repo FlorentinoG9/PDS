@@ -1,20 +1,33 @@
 package Workbook08;
 
-import java.util.Scanner;
-
 public class FactorialRecursive {
-  public static void main(String[] args) {
-    Scanner input = new Scanner(System.in);
+  // Property
+  private int number;
 
-    System.out.print("Enter a non-negative number: ");
-    int n = input.nextInt();
-
-    System.out.printf("The factorial of %d is %d", n, factorial(n));
-
-    input.close();
+  // Cpnstructor
+  FactorialRecursive(int number) {
+    setNumber(number);
   }
 
-  public static long factorial(int n) {
-    return n == 0 ? 1 : n * factorial(n - 1);
+  // Setter
+  public void setNumber(int number) {
+    this.number = number;
+  }
+
+  // Getter
+  public int getNumber() {
+    return number;
+  }
+
+  // Methods
+  // Helper
+  public long factorial() {
+    return factorialRec(this.number);
+  }
+
+  // Recursive method
+  private long factorialRec(int n) {
+    // base if n is equal to 0 if true return n = 1 otherwise call the method with n - 1
+    return n == 0 ? 1 : n * factorialRec(n - 1);
   }
 }
