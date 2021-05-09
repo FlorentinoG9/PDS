@@ -1,13 +1,11 @@
 package Workbook08;
 
-import java.util.Scanner;
-
 public class Time {
   public static void main(String[] args) {
-    Scanner input = new Scanner(System.in);
 
     long startTime, endTime;
 
+    
     int fact = 100;
     int fib = 30;
 
@@ -48,7 +46,7 @@ public class Time {
     fibIter.fibonacci();
     // get the end time
     endTime = timer();
-    System.out.print("Fibonacci Iterative: ");
+    System.out.print("Fibonacci Interative: ");
     System.out.println(duration(startTime, endTime));
 
     /** ----------------- Fibonacci Recursive ----------------- */
@@ -61,7 +59,6 @@ public class Time {
     System.out.print("Fibonacci Recusrive: ");
     System.out.println(duration(startTime, endTime));
 
-    input.close();
   }
 
   public static long timer() {
